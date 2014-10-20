@@ -1,9 +1,12 @@
 #include "../incl/AMUS_notes.hpp"
 
-#include <iostream>
 #include <cmath>
+#include <cstddef>  // std::size_t
+#include <iostream>
 
 #include "SDL2/SDL.h"
+
+#define INVALID_CHAR 'x'
 
 using namespace std;
 
