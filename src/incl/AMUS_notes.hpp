@@ -1,5 +1,5 @@
-#ifndef _NOTES_H
-#define _NOTES_H
+#ifndef _AMUS_NOTES_H
+#define _AMUS_NOTES_H
 
 #include <string>   // std::string
 #include <cstddef>  // std::size_t
