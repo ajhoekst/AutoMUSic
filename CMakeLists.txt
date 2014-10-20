@@ -1,8 +1,16 @@
+project(audio_io)
 cmake_minimum_required (VERSION 3.0.2)
-project(AutoMUSic)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+
+add_executable(${PROJECT_NAME} ./src/impl/AMUS_${PROJECT_NAME}.cpp)
+
+INCLUDE(FindPkgConfig)
+
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+
+INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2AUDIO_INCLUDE_DIRS})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2AUDIO_LIBRARIES})
 
 SET(EXECUTABLE_OUTPUT_PATH "./bin")
 SET(LIBRARY_OUTPUT_PATH "./lib")
-SET(SDL2_COMPILE_FLAGS "-I/usr/local/include/SDL2 -D_THREAD_SAFE -L/usr/local/lib -lSDL2")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SDL2_COMPILE_FLAGS}")
-add_executable(audio_io ./src/impl/AMUS_audio_io.cpp)
