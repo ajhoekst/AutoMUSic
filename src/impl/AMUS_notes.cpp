@@ -1,4 +1,4 @@
-#include "../incl/notes.hpp"
+#include "../incl/AMUS_notes.hpp"
 
 #include <iostream>
 #include <cmath>
